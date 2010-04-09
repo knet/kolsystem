@@ -1,0 +1,34 @@
+div.outer {
+	display: none;
+}
+
+div#loginpaper {
+	display: block;
+}
+
+div#loginpaper * {
+	font-family: Verdana;
+}
+
+body {
+	font-size: 8pt;	
+}
+
+h1 {
+	font-size: 11pt;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 9pt;
+	background-color: gray;
+}
+
+div#loginpaper table th {
+	text-align: left;
+	background-color: #eeeeee;
+}
+div#loginpaper table td {
+	padding-right: 5px;
+}
+

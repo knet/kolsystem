@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "You are not allowed to log in"

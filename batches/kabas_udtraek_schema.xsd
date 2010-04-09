@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="lejemaal">
+	<xs:complexType>
+		<xs:all>
+			<!-- ville egentlig foretrække xs:date som type for alle datoer, men
+			det givne er ok.. -->
+		
+			<!-- KABAS felt 2 -->
+			<xs:element name="id" type="xs:string"/>
+			
+			<!-- KABAS felt "adresse" -->
+			<xs:element name="adresse" type="xs:string" minOccurs="0"/>
+			
+			<!-- KABAS felt 4 -->
+			<xs:element name="indDato" type="xs:string"/>
+			
+			<!-- KABAS felt 7 -->
+			<xs:element name="udDato" type="xs:string" minOccurs="0"/>
+			
+			<!-- KABAS felt 10 -->
+			<xs:element name="lejer1" type="xs:string"/> 
+			
+			<!-- KABAS felt 11 -->
+			<xs:element name="lejer2" type="xs:string" minOccurs="0"/>
+
+			<!-- Om beboeren er tilmeldt kollegiets netværk og opkræves 30 kr pr måned for dette. -->
+			<xs:element name="net" type="xs:boolean"/>
+
+			<!-- KABAS felt 95. Der er tvivl om denne. -->
+			<xs:element name="tidligereId" type="xs:string" minOccurs="0"/>
+
+			<!-- KABAS felt 79. Der er tvivl om denne. -->
+			<xs:element name="tidligereAdr" type="xs:string" minOccurs="0"/>
+
+			<!-- KABAS felt 30. Der er tvivl om denne. Hvad indeholder den info om? -->
+			<xs:element name="freml" type="xs:boolean" minOccurs="0"/>
+
+			<!-- KABAS felt 57 -->
+			<xs:element name="fremlFra" type="xs:string" minOccurs="0"/>
+
+			<!-- KABAS felt 58 -->
+			<xs:element name="fremlTil" type="xs:string" minOccurs="0"/>
+
+			<!-- KABAS felt 59 -->
+			<xs:element name="fremlNavn" type="xs:string" minOccurs="0"/>
+
+			<!-- KABAS felt 60. Der er tvivl om denne. Er det samme som fra eller til dato ovenfor? -->
+			<xs:element name="fremlDato" type="xs:string" minOccurs="0"/>
+
+		</xs:all>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="lejemaalListe">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="genereret" type="xs:dateTime"/> <!-- Hvornår datasættet er generet -->
+			<xs:element ref="lejemaal" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lejemaalListe>
+
+	<genereret>2009-09-24T09:00:00</genereret>
+
+	<lejemaal> <!-- minimalt eksempel lejer i kollegieværelse -->
+		<id>0121-3-12</id> <!-- KABAS felt 2 -->
+		<adresse>Nybrovej 304 st C-31</adresse> <!-- KABAS felt "adresse" -->
+		<indDato>2008-02-15</indDato> <!-- KABAS felt 4 -->
+		<lejer1>Test Testsen</lejer1> <!-- KABAS felt 10 -->
+		<net>false</net> <!-- om beboeren er tilmeldt kollegiets netværk og opkræves 30 kr pr måned for dette -->
+	</lejemaal>
+
+	<lejemaal> <!-- maksimalt eksempel lejer-par i kollegielejlighed -->
+		<id>0133-1-05</id> <!-- KABAS felt 2 -->
+		<adresse>Nybrovej 304 st F-55</adresse> <!-- KABAS felt "adresse" -->
+		<indDato>2008-02-15</indDato> <!-- KABAS felt 4 -->
+		<udDato>2010-01-01</udDato> <!-- KABAS felt 7, ikke obligatorisk -->
+		<lejer1>Tester McTest</lejer1> <!-- KABAS felt 10 -->
+		<lejer2>Testperson Testson</lejer2> <!-- KABAS felt 11, ikke obligatorisk -->
+		<net>true</net> <!-- om beboeren er tilmeldt kollegiets netværk og opkræves 30 kr pr måned for dette -->
+		<tidligereId>0236-2-07</tidligereId> <!-- KABAS felt 95, ikke obligatorisk -->
+		<tidligereAdr>Tester McTest</tidligereAdr> <!-- KABAS felt 79, ikke obligatorisk -->
+		<freml>true</freml> <!-- KABAS felt 30. Der er tvivl om denne. Hvad indeholder den info om? Ikke obligatorisk -->
+		<fremlFra>2009-12-15</fremlFra> <!-- KABAS felt 57, ikke obligatorisk  -->
+		<fremlTil>2010-01-01</fremlTil> <!-- KABAS felt 58, ikke obligatorisk -->
+		<fremlNavn>Testfremlejer Santest</fremlNavn> <!-- KABAS felt 59, ikke obligatorisk  -->
+		<fremlDato>2009-12-15</fremlDato> <!-- KABAS felt 60. Der er tvivl om denne. Er det samme som fra eller til dato ovenfor? Ikke obligatorisk -->
+	</lejemaal>
+
+</lejemaalListe>
