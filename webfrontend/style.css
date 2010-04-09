@@ -7,11 +7,11 @@ color: #353554;
 }
 
 div.topbanner {
-background-image:url(/wp-content/themes/nybro/images/topbanner_intern.jpg);
+background-image:url(/images/topbanner_intern.jpg);
 }
 
 div.titlebanner {
-background-image:url(/wp-content/themes/nybro/images/titlebanner_netaccount.gif);
+background-image:url(/images/titlebanner_netaccount.gif);
 }
 
 
@@ -103,3 +103,415 @@ width: 250px;
 input {
 margin-left: 0px;
 }
+
+
+
+
+
+/*
+ * Alt foelgende er fra hoved-websitets style.css
+ */
+
+
+
+
+
+/*   
+Theme Name: Nybrogaard Kollegiets design
+Theme URI: nybro.dk
+Description: Nybrogaard Kollegiets design
+Author: Allan Boll
+Author URI: gaffel.org/~allan
+*/
+
+
+/********************
+ * Typographical
+ ********************/
+
+body {
+font-family: Verdana, sans-serif;
+color: #333333;
+background-color: #f6f6f6;
+font-size: 13px;
+background-image: url(images/bg.gif);
+background-repeat: repeat-x;
+padding: 0px;
+margin: 0px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a,
+h1 a:hover, h2 a:hover, h3 a:hover,
+h4 a:hover, h5 a:hover {
+text-decoration: none;
+}
+
+h1 {
+color: #4f5435;
+margin: 12px 0px 5px 0px;
+font-size: 18px;
+}
+
+h2 {
+color: #6b7149;
+font-size: 16px;
+margin: 12px 0px 5px 0px;
+}
+
+h3 {
+color: #6b7149;
+font-size: 14px;
+font-style:italic;
+margin: 12px 0px 5px 0px;
+}
+
+h4
+{
+color: #6b7149;
+font-size: 12px;
+margin: 12px 0px 5px 0px;
+}
+
+h5 {
+font-size: 11px;
+}
+
+hr {
+border: none;
+height: 1px;
+background-color: black;
+}
+
+img {
+border: none;
+}
+
+a {
+color: #4f5435;
+text-decoration: underline;
+}
+
+a:hover {
+color: #4f5435;
+text-decoration: underline;
+}
+
+div.content p {
+line-height: 130%;
+margin: 0px 0px 8px 0px;
+}
+
+div.content img {
+margin: 13px;
+}
+
+div.content img.alignleft {
+float: left;
+margin: 0 18px 8px 0;
+}
+
+div.content img.alignright {
+float: right;
+margin: 10px 0 18px 18px;
+clear: right;
+}
+
+div.content table {
+border-collapse: collapse;
+}
+
+div.content table th {
+font-size: 9px;
+}
+
+div.content table th,
+div.content table.listing td {
+text-align: left;
+border-bottom: 1px solid #bebebe;
+padding: 1px 0px 1px 0px;
+}
+
+div.content table.listing {
+border-collapse: separate;
+border-spacing: 3px 0px;
+margin: auto;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+
+/********************
+ * Main layout
+ ********************/
+
+div.outer {
+width: 970px;
+margin: auto;
+/*border: 1px solid #eeeaea;*/
+border-top: none;
+background-color: white;
+margin-top: 0px;
+}
+
+div.topbanner {
+background-image: url(images/topbanner_2.jpg);
+height: 120px;
+text-align: right;
+}
+
+div.titlebanner {
+background-image: url(images/titlebanner_2.gif);
+height: 50px;
+}
+
+div.titlebanner div.links {
+margin: 0px;
+text-align: right;
+padding-top: 8px;
+padding-right: 8px;
+font-weight: bold;
+}
+
+div.content {
+padding: 0px 30px 30px 30px;
+margin: 0px;
+}
+
+div.breadcrumbsbar {
+padding: 5px 30px 5px 30px;
+font-size: 11px;
+}
+
+div.languagelinks {
+float: right;
+vertical-align: middle;
+width: 140px;
+text-align: right;
+}
+
+div.languagelinks img {
+vertical-align: middle;
+padding-bottom: 2px;
+}
+
+div.narrowcontentarea {
+margin-left: 180px;
+}
+
+div.narrowcontentarea textarea {
+width: 570px;
+}
+
+div.footer {
+margin: 0px;
+font-size: 10px;
+padding: 3px 30px 3px 30px;
+background-color: #8d9560;
+border-bottom: 15px solid #f6f6f6;
+}
+
+div.footer p {
+margin: 0px;
+}
+
+div.meta {
+border: 1px solid black;
+margin: auto;
+margin-top: 50px;
+padding: 5px;
+width: 700px;
+}
+
+div.infobox {
+float: right;
+width: 280px;
+background-color: #dfdfdf;
+background-repeat: repeat-x;
+padding: 10px;
+margin-left: 20px;
+margin-bottom: 20px;
+margin-top: 10px;
+clear: both;
+}
+
+a.button {
+background-image: url(images/button.png);
+border-radius: 4px;
+-khtml-border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border: 1px solid #bbbbbb;
+text-decoration: none;
+padding: 3px;
+margin: auto;
+display: block;
+width: 140px;
+text-align: center;
+}
+
+div.infobox a.button {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+
+/********************
+ * Gallery shortcode specific
+ ********************/
+.gallery {
+margin: auto;
+}
+
+.gallery-item {
+float: left;
+margin-top: 10px;
+text-align: center;
+}
+
+.gallery-caption {
+margin-left: 0;
+}
+
+
+/********************
+ * Menu specific
+ ********************/
+div.menu1 {
+background-color: #9ea76b;
+height: 30px;
+border-right: 5px solid #8d9560;
+border-left: 5px solid #8d9560;
+}
+
+div.menu1 li {
+list-style-type: none;
+display: inline;
+}
+
+div.menu1 ul {
+margin: 0px;
+padding: 0px;
+}
+
+div.menu1 a {
+text-decoration: none;
+color: white;
+font-size: 14px;
+line-height: 30px;
+float: left;
+padding: 0px 6px 0px 6px;
+}
+
+div.menu1 li {
+float: left;
+border-right: 5px solid #8d9560;
+}
+
+div.menu1 a:hover {
+background-color: #757c4f;
+}
+
+div.menu1 li.current_page_ancestor, div.menu1 li.current_page_item {
+background-color: #757c4f;
+}
+
+div.menu2 {
+float: left;
+width: 180px;
+margin-left: 10px;
+}
+
+div.menu2 li.page_folder {
+background-image: url(images/bulletplus.gif);
+}
+
+div.menu2 li {
+list-style-type: none;
+background-image: url(images/bulletarrow.gif);
+background-repeat: no-repeat;
+background-position: 0px 1px;
+padding-left: 14px;
+margin-left: 6px;
+}
+
+div.menu2 li a {
+border-bottom: 1px solid #eeeaea;
+}
+
+div.menu2 ul {
+margin: 0px;
+padding: 0px;
+}
+
+div.menu2 a {
+text-decoration: none;
+color: #333333;
+display: block;
+}
+
+div.menu2 a:hover {
+background-color: #f3f3f3;
+}
+
+div.menu2 h1 a:hover {
+background-color: transparent;
+}
+
+div.menu2 h1 {
+font-size: 14px;
+margin: 18px 0px 0px 20px;
+}
+
+div.menu2 h1 a {
+color: #4f5435;
+}
+
+div.menu2 p {
+margin-left: 30px;
+}
+
+div.menu2 li.page_item {
+font-weight: normal;
+}
+
+div.menu2 li.current_page_item {
+font-weight: bold;
+}
+
+
+
+/* beboerlister */
+
+.quicksearch {
+float: left;
+clear: right;
+}
+
+.qs_input, select#blok, select#etage {
+float: left;
+/*-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+*/
+background:#FBFBFB none repeat scroll 0 0;
+border:1px solid #E5E5E5;
+font-size:13px;
+margin-bottom:2px;
+margin-left: 2px;
+margin-right: 2px;
+margin-top:2px;
+padding:3px;
+}
+
+.qs_input {
+    width: 250px;
+}
+
+div.content img.loader {
+    margin: 0px;
+    padding-left: 3px;
+    padding-top: 6px;
+
+}
+
+
