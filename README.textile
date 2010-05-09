@@ -7,7 +7,7 @@ Dette system er til internt brug pŒ kollegierne ved DTU
 
 h2. Installation
 
-Pt er det en meget manuel aff¾re. 
+Pt er det en meget manuel affære. 
 
 cp doc/config.php.example.php config.php
 mkdir log/
