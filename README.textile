@@ -2,8 +2,7 @@ h1. KolSystem
 
 h2. Introduktion
 
-Dette system er til internt brug pŒ kollegierne ved DTU
-
+Dette system er til internt brug på kollegierne ved DTU
 
 h2. Installation
 
