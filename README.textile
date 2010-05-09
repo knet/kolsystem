@@ -1,0 +1,28 @@
+h1. KolSystem
+
+h2. Introduktion
+
+Dette system er til internt brug på kollegierne ved DTU
+
+
+h2. Installation
+
+Pt er det en meget manuel affære. 
+
+cp doc/config.php.example.php config.php
+mkdir log/
+touch log/webfrontend.log
+chmod 664 log/webfrontend.log
+chown root:www-data log/webfrontend.log
+chmod 640 config.php
+chown root:www-data config.php
+mkdir webfrontend/templates_c
+chmod 775 webfrontend/templates_c
+chown root:www-data webfrontend/templates_c
+chmod 755 batches/kabas_import_batch.php
+chmod 755 batches/kab_tilmeldinger_batch.php
+chmod 4755 batches/mailliste_batch.php
+chmod 4755 batches/opdater_password_filer.php
+chmod 4755 batches/bruger_oprydning_batch.php
+chmod 755 clitools/dummyshell
+
