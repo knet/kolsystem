@@ -2,11 +2,11 @@ h1. KolSystem
 
 h2. Introduktion
 
-Dette system er til internt brug på kollegierne ved DTU
+Dette system er til internt brug pÃ¥ kollegierne ved DTU
 
 h2. Installation
 
-Pt er det en meget manuel affære. 
+Pt er det en meget manuel affÃ¦re. 
 
 cp doc/config.php.example.php config.php
 mkdir log/
