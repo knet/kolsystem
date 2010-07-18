@@ -1,6 +1,10 @@
 <?php
-
-require('/nyksystem/config.php');
+$configfile = '../config.php';
+if (!file_exists($configfile)) {
+	echo "Missing config file: ". $configfile;
+	exit();
+}
+require($configfile);
 
 class backend_database_exception extends Exception { }
 class backend_parameter_fejl_database_exception
