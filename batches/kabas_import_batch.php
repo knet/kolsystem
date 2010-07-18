@@ -2,6 +2,10 @@
 <?php
 require(dirname(__FILE__).'/../backend/backend.inc.php');
 
+if (definded(KABAS_ENABLE) AND constant(KABAS_ENABLE) == false) {
+	exit();
+}
+
 /**
  * Gem log-linje. Hvis givne besked er flere linjer, konverter da linjebrud til
  * komma.

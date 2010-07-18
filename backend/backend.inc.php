@@ -32,12 +32,12 @@ function backend_dbquery($q, $parametre = null) {
 
 	// forbind hvis ikke forbundet allerede
 	if($mysqlhandle == null || !mysql_ping($mysqlhandle)) {
-		$mysqlhandle = @mysql_connect(NYKSYSTEM_DB_HOST, NYKSYSTEM_DB_USERNAME,
-			NYKSYSTEM_DB_PASSWORD);
+		$mysqlhandle = @mysql_connect(KOLSYSTEM_DB_HOST, KOLSYSTEM_DB_USERNAME,
+			KOLSYSTEM_DB_PASSWORD);
 		if(!$mysqlhandle) {
 			throw new backend_database_exception('could not connect to db');
 		}
-		if(!mysql_select_db(NYKSYSTEM_DB_NAME)) {
+		if(!mysql_select_db(KOLSYSTEM_DB_NAME)) {
 			throw new backend_database_exception(mysql_error($mysqlhandle));
 		}
 
@@ -829,6 +829,6 @@ function backend_slet_gruppemedlemskab_eksternt($email, $gruppenavn) {
  * Sætter batch scripts i gang som skal opdatere lokale password filer og lign.
  */
 function backend_opdater_datafiler() {
-	shell_exec("sudo /nyksystem/batches/opdater_password_filer.php > /dev/null &");
-	shell_exec("sudo /nyksystem/batches/mailliste_batch.php > /dev/null &");
+	shell_exec("sudo ".BATCHES_PATH."opdater_password_filer.php > /dev/null &");
+	shell_exec("sudo ".BATCHES_PATH."mailliste_batch.php > /dev/null &");
 }
