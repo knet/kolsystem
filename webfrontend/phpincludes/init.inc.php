@@ -44,3 +44,4 @@ $smarty->assign('adminmenu', $adminmenu);
 
 // set some other template variables
 $smarty->assign('login_brugernavn', $_SESSION['brugernavn']);
+$smarty->assign('header_title', WEBFRONTEND_TITLE);

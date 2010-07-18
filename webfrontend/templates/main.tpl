@@ -4,7 +4,7 @@
  
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Nybrogaard dormitory - Network account</title> 
+<title><!--{$header_title}--> - Network account</title> 
 <!--<link rel="stylesheet" href="/wp-content/themes/nybro/style.css" type="text/css" media="screen" />-->
 <link rel="stylesheet" href="/netaccount/style.css" type="text/css" media="screen" />
 <style type="text/css">

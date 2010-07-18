@@ -28,6 +28,7 @@ define('KABAS_UDTRAEK_SCHEMA', '/nyksystem/batches/kabas_udtraek_schema.xsd');
 /* Webfrontend */
 define('WEBFRONTEND_PATH','/srv/kolsystem/webfrontend/');
 define('WEBFRONTEND_LOGFILE','/srv/kolsystem/log/webfrontend.log');
+define('WEBFRONTEND_TITLE', 'Dorm name');
 
 /* Batches */
 define('BATCHES_PATH','/srv/kolsystem/batches/');
