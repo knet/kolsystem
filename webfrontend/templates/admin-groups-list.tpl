@@ -12,7 +12,7 @@
 <tr>
 	<td><a href="./admin-groups.php?groupname=<!--{$gruppe.gruppenavn}-->"><!--{$gruppe.gruppenavn}--></a></td>
 	<td><!--{$gruppe.beskrivelse}--></td>
-	<td><!--{$gruppe.mail_liste_navn}--><!--{if $gruppe.mail_liste_navn}-->@nybro.dk<!--{/if}--></td>
+	<td><!--{$gruppe.mail_liste_navn}--><!--{if $gruppe.mail_liste_navn}-->@<!--{$dorm_domain}--><!--{/if}--></td>
 </tr>
 <!--{/foreach}-->
 </table>

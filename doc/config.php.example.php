@@ -1,4 +1,8 @@
 <?php
+/* Generel setup */
+define("DORM_NAME", "NybrogŒrd Kollegiet");
+define("DORM_WEBSITE", "http://www.nybro.dk/");
+define("DORM_DOMAIN", "nybro.dk");
 
 /* Database */
 define('KOLSYSTEM_DB_HOST', 'localhost');

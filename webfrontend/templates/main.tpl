@@ -80,7 +80,7 @@ jQuery(document).ready(
  
 <div class="menu1">
 <ul>
-<li><a href="http://www.nybro.dk/" title="Back to homepage">Back to homepage</a></li>
+<li><a href="<!--{$dorm_website}-->" title="Back to homepage">Back to homepage</a></li>
 </ul>
 </div>
  

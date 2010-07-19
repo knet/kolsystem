@@ -44,4 +44,8 @@ $smarty->assign('adminmenu', $adminmenu);
 
 // set some other template variables
 $smarty->assign('login_brugernavn', $_SESSION['brugernavn']);
+
 $smarty->assign('header_title', WEBFRONTEND_TITLE);
+$smarty->assign('dorm_website', DORM_WEBSITE);
+$smarty->assign('dorm_domain', DORM_DOMAIN);
+$smarty->assign('dorm_netgrp_email', DORM_NETGRP_EMAIL);

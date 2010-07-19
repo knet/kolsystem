@@ -14,7 +14,7 @@
 <!--{foreach from=$grupper item=gruppe}-->
 <tr>
 	<td><!--{$gruppe.beskrivelse}--></td>
-	<td><!--{$gruppe.mail_liste_navn}--><!--{if $gruppe.mail_liste_navn}-->@nybro.dk<!--{/if}--></td>
+	<td><!--{$gruppe.mail_liste_navn}--><!--{if $gruppe.mail_liste_navn}-->@<!--{$dorm_domain}--><!--{/if}--></td>
 	<td><input type="checkbox" name="modtag_mail[<!--{$gruppe.gruppenavn}-->]" value="1" <!--{if $gruppe.mail_modtag}-->checked<!--{/if}--> <!--{if $gruppe.mail_obligatorisk}-->disabled<!--{/if}-->></td>
 </tr>
 <!--{/foreach}-->
