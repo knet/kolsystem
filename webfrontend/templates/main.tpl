@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><!--{$header_title}--> - Network account</title> 
-<!--<link rel="stylesheet" href="/wp-content/themes/nybro/style.css" type="text/css" media="screen" />-->
-<link rel="stylesheet" href="/netaccount/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <style type="text/css">
 </style>
 <script type='text/javascript' src='js/jquery-1.3.2.js'></script>
@@ -53,7 +52,7 @@ jQuery(document).ready(
 		window.print();
 	});
 </script>
-<link rel="stylesheet" href="printlogin.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/printlogin.css" type="text/css" media="print" />
 <!--{/if}-->
 
 <script type="text/javascript">
