@@ -7,11 +7,11 @@ color: #353554;
 }
 
 div.topbanner {
-background-image:url(/images/topbanner_intern.jpg);
+background-image:url(../images/topbanner_intern.jpg);
 }
 
 div.titlebanner {
-background-image:url(/images/titlebanner_netaccount.gif);
+background-image:url(../images/titlebanner_netaccount.gif);
 }
 
 
@@ -75,7 +75,7 @@ input.externalmember-description {
 }
 
 .ac_loading {
-	background: white url('indicator.gif') right center no-repeat;
+	background: white url('../images/indicator.gif') right center no-repeat;
 }
 
 .ac_odd {
@@ -134,7 +134,7 @@ font-family: Verdana, sans-serif;
 color: #333333;
 background-color: #f6f6f6;
 font-size: 13px;
-background-image: url(images/bg.gif);
+background-image: url(../images/bg.gif);
 background-repeat: repeat-x;
 padding: 0px;
 margin: 0px;
@@ -253,13 +253,13 @@ margin-top: 0px;
 }
 
 div.topbanner {
-background-image: url(images/topbanner_2.jpg);
+background-image: url(../images/topbanner_2.jpg);
 height: 120px;
 text-align: right;
 }
 
 div.titlebanner {
-background-image: url(images/titlebanner_2.gif);
+background-image: url(../images/titlebanner_2.gif);
 height: 50px;
 }
 
@@ -422,12 +422,12 @@ margin-left: 10px;
 }
 
 div.menu2 li.page_folder {
-background-image: url(images/bulletplus.gif);
+background-image: url(../images/bulletplus.gif);
 }
 
 div.menu2 li {
 list-style-type: none;
-background-image: url(images/bulletarrow.gif);
+background-image: url(../images/bulletarrow.gif);
 background-repeat: no-repeat;
 background-position: 0px 1px;
 padding-left: 14px;
