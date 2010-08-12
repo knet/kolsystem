@@ -2,39 +2,42 @@
 <?php
 require(dirname(__FILE__).'/../backend/backend.inc.php');
 
-define('BRUGEROPRYDNINGBATCH_LOGFILE', '../logs/bruger_oprydning_batch.log');
 
-/* FUNKTIONER */
 
-function writelog($str) {
-	$s = date('D, d M Y H:i:s').' '.$str."\n";
-	echo $str."\n";
-	file_put_contents(BRUGEROPRYDNINGBATCH_LOGFILE, $s, FILE_APPEND | LOCK_EX);
+/**
+ * Gem log-linje. Hvis givne besked er flere linjer, konverter da linjebrud til
+ * komma.
+ * 
+ * @param string $s Log-linje.
+ */
+function log_skriv($s) {
+	$s = str_replace("\r\n", ', ', $s);
+	$s = str_replace("\n", ', ', $s);
+	$s = str_replace("\r", ', ', $s);
+	$s = date('D, d M Y H:i:s') . ' ' . $s. "\n";
+	file_put_contents(BRUGEROPRYDNINGBATCH_LOGFILE, $s, FILE_APPEND);
 }
 
-/* PROGRAMMET STARTER HER */
+/*
+ *******************************************************************************
+ */
+
+log_skriv('starter');
 
 // frameld brugere hvis udflytningsdato er passeret
-$udflyttede_brugere = backend_dbquery("SELECT brugernavn FROM brugere WHERE CURDATE()>udflytning");
+$udflyttede_brugere = backend_hent_brugere(array('vaerelse_type' => 'begge'),
+	'vaerelse', false, 'udflyttede');
 foreach($udflyttede_brugere as $bruger) {
-	try {
+	if(strtotime($bruger['udflytning']) < (time()-40*86400)) {
+		$brugerdata = json_encode($bruger);
+		$grupper = json_encode(backend_dbquery(
+			'SELECT * FROM gruppemedlemskaber where brugernavn=?',
+			array($bruger['brugernavn'])));
+		log_skriv("Sletter bruger: $brugerdata. Gruppetilmeldinger: $grupper");
 		backend_slet_bruger($bruger['brugernavn']);
-		writelog('Bruger: '.$bruger['brugernavn'].' tilføjet i tidligere_beboere, slettet i brugere');
-	} catch(backend_InsertTidligereBeboerFejlException $e) {
-		writelog('FEJL: Kunne ikke tilføje kopi af brugeren '.$bruger['brugernavn'].' til tidligere_beboere.');
-		echo $e;
-	} catch(backend_DeleteBrugerFejlException $e) {
-		writelog('FEJL: Kunne ikke slette brugeren '.$bruger['brugernavn']);
-		echo $e;
-	}	
+	}
 }
 
-
-
-
-
 // TODO slet fremlejere som har kab id som ikke matcher en alm. lejers kab id
-
-
 
 ?>

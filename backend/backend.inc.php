@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $configfile = '/kolsystem/config.php';
 if (!file_exists($configfile)) {
 	echo "Missing config file: ". $configfile;
@@ -400,8 +400,8 @@ function backend_set_brugerdata($brugernavn, $data) {
  *  - lejer_type
  * @param string $sorterEfter Felt som der skal sorteres efter
  * @param boolean $asc Faldende sorteringen (true) eller stigende (false)
- * @param string $status Enten 'nuvaerende', 'fremtidige', 'udflytninger' eller
- *   'udflyttede'
+ * @param string $status Enten 'nuvaerende', 'fremtidige', 'udflytninger', 
+ *   'udflyttede' eller 'alle'
  * @return Liste af maps med følgende keys: brugernavn, vaerelse, navn, email,
  *	mobilnummer, hjemmeside, net_tilmeldt_dato, net_tilmeldt_dato_kabstatus,
  *  spaerret_net_konto, skjult_navn, skjult_email, indflytning, udflytning,
@@ -493,13 +493,12 @@ function backend_hent_brugere($data = array(), $sorterEfter = "vaerelse",
 	} else if($status == 'udflyttede') {
 		$q .= 'AND udflytning <= DATE(NOW()) ';
 	} else if($status == 'udflytninger') {
-		$q .= 'AND NOT udflytning IS NULL ';
+		$q .= 'AND (NOT udflytning IS NULL) AND udflytning >= DATE(NOW()) ';
     } else if($status == 'alle') {
     } else {
 		$q .= 'AND (indflytning <= DATE(NOW()) OR indflytning IS NULL) ';
 		$q .= 'AND (udflytning >= DATE(NOW()) OR udflytning IS NULL) ';
 	}
-
 
 	$whitelist = array('navn', 'vaerelse', 'vaerelse_type');
 	if(in_array($sorterEfter, $whitelist))
@@ -543,8 +542,8 @@ function backend_frameld_bruger_fra_net($brugernavn) {
  * @param string $brugernavn
  */
 function backend_slet_bruger($brugernavn) {
-	backend_dbquery("DELETE FROM brugere WHERE brugernavn LIKE ?",
-		array($brugerdata['brugernavn']));		
+	backend_dbquery("DELETE FROM brugere WHERE brugernavn = ?",
+		array($brugernavn));
 }
 
 /**
@@ -823,6 +822,29 @@ function backend_slet_gruppemedlemskab_eksternt($email, $gruppenavn) {
 	backend_dbquery(
 		"DELETE FROM gruppemedlemskaber_eksterne WHERE email LIKE ? AND "
 		."gruppenavn LIKE ?", array($email, $gruppenavn));
+}
+
+/**
+ * Kan kaste en DatabaseException.
+ *
+ * @param string $brugernavn_eksisterende Brugernavnet fra det gamle værelse,
+ *   som bliver bevaret.
+ * @param string $brugernavn_midlertidigt Brugernavn der er blevet oprettet af
+ *   systemet for brugeren på det nye værelse. Dette brugernavn bliver slettet.
+ */
+function backend_intern_flytning($brugernavn_eksisterende,
+		$brugernavn_midlertidigt) {
+	/*
+	TODO:
+	
+	Noter det nye kab_lejemaal_id, indflytning, lejertype, vaerelse og
+	udflytning fra den nye bruger der er blevet oprettet
+
+	Slet den nye bruger.
+
+	Sæt det nye kab_lejemaal_id, indflytning, lejertype, vaerelse og udflytning
+	ind i den gamle bruger
+	*/
 }
 
 /**

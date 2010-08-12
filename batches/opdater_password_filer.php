@@ -62,6 +62,9 @@ foreach($unix_brugere as $bruger) {
 $knetshadowfile_content = '';
 $fundne_brugernavne = array();
 $db_brugere = backend_hent_brugere();
+$db_brugere_fremtidige = backend_hent_brugere($data = array(), $sorterEfter = "vaerelse",
+	$asc = false, $status = 'fremtidige');
+$db_brugere = array_merge($db_brugere, $db_brugere_fremtidige);
 foreach($db_brugere as $bruger) {
 	// klargør brugernavn og kontroller at det starter med 'nyk'
 	$brugernavn = $bruger['brugernavn'];

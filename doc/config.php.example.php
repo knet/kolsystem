@@ -36,6 +36,7 @@ define('WEBFRONTEND_TITLE', 'Dorm name');
 
 /* Batches */
 define('BATCHES_PATH','/kolsystem/batches/');
+define('BRUGEROPRYDNINGBATCH_LOGFILE', '/kolsystem/log/bruger_oprydning_batch.log');
 
 /* Andet */
 define('MINIMALIST_DIR', '/var/spool/minimalist/');

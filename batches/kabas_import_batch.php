@@ -60,12 +60,15 @@ function fixdate($date) {
 
 /**
  * Konverter dato til databasens format. Forvent at dato er i formattet
- * 'DD.MM.YYYY'.
+ * 'DD.MM.YYYY', ellers 'YYYY-MM-DD'.
  * 
  * @param string $dato
  * @return string
  */
 function fixfremldate($fremlejerdate) {
+	if(strpos($fremlejerdate, '-') !== false)
+		return fixdate($fremlejerdate);
+
 	list($d, $m, $Y) = explode('.', $fremlejerdate);
 	return fixdate($Y.'-'.$m.'-'.$d);
 }
@@ -249,7 +252,7 @@ function opdater_brugere_fra_kabas_lejemaal($lejemaal, $lejer_type) {
  * @param object $lejemaal SimpleXML-objekt af 'lejemaal'-entry
  */
 function opdater_fremlejer_bruger_fra_kabas_lejemaal($lejemaal, $brugernavn) {
-	$r = backend_hent_brugere(array('brugernavn' => $brugernavn));
+	$r = backend_hent_brugere(array('brugernavn' => $brugernavn), 'vaerelse', false, 'alle');
 	if(count($r) == 0) {
 		log_skriv(
 			'fejl, forsoegte at opdatere fremlejer som ikke var oprettet, '
@@ -333,8 +336,10 @@ foreach($xml->lejemaal as $lejemaal) {
 
 		// tjek om der findes fremlejer på dette kab_lejemaal_id i forvejen
 		$fremlejere = backend_hent_brugere(array(
-			'kab_lejemaal_id' => $lejemaal->id,
-			'lejer_type' => 'fremlejer'));
+			'kab_lejemaal_id' => $lejemaal->id,	'lejer_type' => 'fremlejer'));
+		$fremlejere = array_merge($fremlejere, backend_hent_brugere(array(
+			'kab_lejemaal_id' => $lejemaal->id, 'lejer_type' => 'fremlejer'),
+			'vaerelse', false, 'fremtidige'));
 		if(count($fremlejere) > 0){
 			foreach($fremlejere as $bruger) {
 				// hvis indflytningsdato eller navn er samme, må det formodes

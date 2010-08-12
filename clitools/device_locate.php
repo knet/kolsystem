@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
 include "../backend/network_management.inc.php";
+require_once '../backend/backend.inc.php';
 
 if($argv[1] == "") {
 	echo "usage: device_locate.php taraget_mac_or_ip\n";

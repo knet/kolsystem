@@ -70,8 +70,9 @@ foreach($grupper as $gruppe) {
 	// skriv footer-fil hvis der er angivet footer
 	$footer_sti = MINIMALIST_DIR . '/' . $liste_navn . '/footer';
 	if($gruppe['mail_footer']) {
-		if(@file_get_contents($footer_sti) !== $gruppe['mail_footer'])
-			file_put_contents($footer_sti, $gruppe['mail_footer'], LOCK_EX);
+		$footer = wordwrap(iconv('UTF-8', 'ISO-8859-1', $gruppe['mail_footer']), 78);
+		if(@file_get_contents($footer_sti) !== $footer)
+			file_put_contents($footer_sti, $footer, LOCK_EX);
 	} else {
 		@unlink($footer_sti);
 	}
