@@ -1,5 +1,5 @@
 <?php
-$configfile = '../config.php';
+$configfile = '/kolsystem/config.php';
 if (!file_exists($configfile)) {
 	echo "Missing config file: ". $configfile;
 	exit();

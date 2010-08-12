@@ -1,8 +1,8 @@
 <?php
 /* Generel setup */
-define("DORM_NAME", "NybrogŒrd Kollegiet");
-define("DORM_WEBSITE", "http://www.nybro.dk/");
-define("DORM_DOMAIN", "nybro.dk");
+define("DORM_NAME", "Test Kollegiet");
+define("DORM_WEBSITE", "http://www.testkollegie.dk/");
+define("DORM_DOMAIN", "testkollegie.dk");
 
 /* Database */
 define('KOLSYSTEM_DB_HOST', 'localhost');
@@ -18,8 +18,8 @@ define('UNIXFILE_ALIASES', '/etc/aliases');
 define('SMBPASSWD', '/etc/samba/smbpasswd');
 
 /* R-sync til knet */
-define('RSYNC_PRIVKEY', '/etc/kolsystem/knet_rsync_priv_key');
-define('RSYNC_DIR', '/etc/kolsystem/data/knet_rsync/');
+define('RSYNC_PRIVKEY', '/kolsystem/knet_rsync_priv_key');
+define('RSYNC_DIR', '/kolsystem/data/knet_rsync/');
 define('RSYNC_HOST', 'update2.k-net.dk');
 
 /* KABAS-relateret */
@@ -30,12 +30,12 @@ define('KABAS_DATAFILE_PATH', 'ftp://x:x@194.239.0.110/web_nyk.xml');
 define('KABAS_UDTRAEK_SCHEMA', '/nyksystem/batches/kabas_udtraek_schema.xsd');
 
 /* Webfrontend */
-define('WEBFRONTEND_PATH','/srv/kolsystem/webfrontend/');
-define('WEBFRONTEND_LOGFILE','/srv/kolsystem/log/webfrontend.log');
+define('WEBFRONTEND_PATH','/kolsystem/webfrontend/');
+define('WEBFRONTEND_LOGFILE','/kolsystem/log/webfrontend.log');
 define('WEBFRONTEND_TITLE', 'Dorm name');
 
 /* Batches */
-define('BATCHES_PATH','/srv/kolsystem/batches/');
+define('BATCHES_PATH','/kolsystem/batches/');
 
 /* Andet */
 define('MINIMALIST_DIR', '/var/spool/minimalist/');
